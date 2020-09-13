@@ -5,6 +5,17 @@ import java.util.Random;
 public class CardsManager {
     private static Random rnd = new Random();
     private int[][] mat;
+    int[] pics = {
+            R.drawable.disabled_card,
+            R.drawable.car1,
+            R.drawable.car2,
+            R.drawable.car3,
+            R.drawable.car4,
+            R.drawable.car5,
+            R.drawable.car6,
+            R.drawable.car7,
+            R.drawable.car8,
+    };
     public CardsManager(){
         mat = new int[4][4];
         createRandomBoard(mat);
@@ -14,28 +25,7 @@ public class CardsManager {
 
 
     public int getPhoto(int i,int j){
-        int picNum = this.mat[i][j];
-        switch (picNum){
-            case 0:
-                return R.drawable.disabled_card;
-            case 1:
-                return R.drawable.car1;
-            case 2:
-                return R.drawable.car2;
-            case 3:
-                return R.drawable.car3;
-            case 4:
-                return R.drawable.car4;
-            case 5:
-                return R.drawable.car5;
-            case 6:
-                return R.drawable.car6;
-            case 7:
-                return R.drawable.car7;
-            case 8:
-                return R.drawable.car8;
-        }
-        return R.drawable.disabled_card;
+        return pics[this.mat[i][j]];
     }
 
     public Boolean equals(int i1,int j1,int i2,int j2){
